@@ -1,0 +1,99 @@
+:root{
+    font-size: 16px;
+}
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+#Contenedor{
+    width: 400px;
+    border: 3px solid red;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin: 40px auto;
+    text-align: right;
+}
+h1{
+    color: red;
+    text-align: center;
+}
+.ContenedorInputs{
+    border: 3px solid red;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 4px;
+}
+.ContenedorInputs > input{
+    width: 90%;
+    font-size: 1.5rem;
+    border: 0;
+    outline: none;
+}
+.ContenedorInputs > img{
+    vertical-align: middle;
+}
+#boton{
+    font-size: 2rem;
+    background-color: red;
+    padding: 10px 30px;
+    border: 0;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#Contenedor2{
+    width: 400px;
+    margin: 50px auto;
+}
+
+#rojo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: red;
+    color: white;
+}
+
+#negro{
+    height: 25px;
+    background-color: black;
+    margin: 8px 0;
+    text-align: center;
+    padding-top: 5px;
+    border: 3px solid white;
+}
+
+#azul{
+    display: flex;
+    justify-content: center;
+    padding: 25px 0 5px;
+    background-color: blue;
+    color: black;
+    font-weight: bolder;
+}
+
+#TotalFacturado{
+    color: red;
+    font-weight: bolder;
+    text-align: center;
+    margin: 10px;
+}
+
+#TotalFacturado > span{
+    color: black;
+}
+
+article{
+    border: 1px solid grey;
+    border-left: 3px solid orange !important;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+article > div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+

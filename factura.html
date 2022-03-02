@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="Contenedor">
+        <form action="VisorFactura.php">
+        <h1>
+            Formulario de acceso
+        </h1>
+        <div class="ContenedorInputs">
+            <input type="text" placeholder="CIF/NIF" name="nif">
+            <img src="imagenes/usuario.PNG" alt="">
+        </div>
+        <div class="ContenedorInputs">
+            <input type="text" placeholder="Password" name="password">
+            <img src="imagenes/candado.PNG" alt="">
+        </div>
+        <input type="button" value="Entrar" id="boton" onclick="ValidarFormulario(this.form)">
+        </form>
+    </div>
+
+    <script>
+        function ValidarFormulario(Formulario){
+            if(Formulario.nif.value.length != 9){
+                alert("El NIF debe tener 9 caracteres, Rellene con 0s por delante si tiene menos");
+
+                Formulario.nif.select();
+                return;
+            }
+
+            NifUsuario = Formulario.nif.value;
+            NumerosNif = NifUsuario.substring(0,8);
+            LetraNif = NifUsuario.substring(8);
+
+            if(isNaN(NumerosNif)){
+            alert("Los numeros del NIF son incorrectos");
+
+            Formulario.nif.select();
+            return;
+
+            }
+
+            NumerosNif = parseInt(NumerosNif);
+
+            Resto = NumerosNif % 23;
+
+            LETRAS = "TRWAGMYFPDCBNJZSQVHLCKE";
+
+            LetraCorrecta = LETRAS[Resto];
+
+            if(LetraNif != LetraCorrecta){
+                alert("Letra del NIF incorrecta");
+                Formulario.nif.select();
+                return;
+            }
+
+            if(Formulario.password.value.length != 9){
+                alert("La Password debe tener como minimo 4 caracteres");
+
+                Formulario.password.select();
+                return;
+            }
+
+            Formulario.submit();
+        }
+    </script>
+</body>
+</html>
